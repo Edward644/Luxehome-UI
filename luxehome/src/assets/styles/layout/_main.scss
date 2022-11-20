@@ -1,0 +1,8 @@
+@import "./nav";
+@import "./page";
+@import "./header";
+
+.scroll-y {
+  overflow-y: scroll;
+  overflow-y: overlay;
+}

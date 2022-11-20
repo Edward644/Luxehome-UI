@@ -1,0 +1,12 @@
+#page{
+  @extend .scroll-y;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--header-height);
+  padding-left: var(--navbar-width-min);
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  transition: var(--nav-transition);
+}

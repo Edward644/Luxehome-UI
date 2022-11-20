@@ -1,0 +1,16 @@
+#nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: var(--navbar-width);
+  transition: var(--nav-transition);
+
+  &__header {
+    background-color: blanchedalmond;
+    height: var(--header-height);
+  }
+
+  background-color: bisque;
+}

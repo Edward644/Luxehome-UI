@@ -1,0 +1,73 @@
+:root {
+  --header-height: 50px;
+  --navbar-width: 280px;
+  --navbar-width-min: 70px;
+  --nav-transition: transform 400ms cubic-bezier(0.05, 0.74, 0.27, 0.99);
+}
+@media (max-width: 992px) {
+  :root {
+    --header-height: 48px;
+    --navbar-width: 250px;
+    --navbar-width-min: 60px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: var(--navbar-width);
+  transition: var(--nav-transition);
+  background-color: bisque;
+}
+#nav__header {
+  background-color: blanchedalmond;
+  height: var(--header-height);
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--header-height);
+  padding-left: var(--navbar-width-min);
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  transition: var(--nav-transition);
+}
+
+#header {
+  position: fixed;
+  height: var(--header-height);
+  width: calc(100% - var(--navbar-width-min));
+  top: 0;
+  right: 0;
+  background-color: aliceblue;
+}
+
+.scroll-y, #page {
+  overflow-y: scroll;
+  overflow-y: overlay;
+}
+
+#nav.closed {
+  transform: translateX(calc(-100% + var(--navbar-width-min)));
+}
+@media (max-width: 992px) {
+  #nav.closed {
+    transform: none;
+  }
+  #nav ~ #page, #nav ~ #topbar {
+    transform: translateX(var(--navbar-width));
+  }
+  #nav:not(.visible) ~ #page, #nav:not(.visible) ~ #topbar {
+    transform: none;
+  }
+}

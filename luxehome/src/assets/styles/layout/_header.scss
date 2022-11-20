@@ -1,0 +1,8 @@
+#header {
+  position: fixed;
+  height: var(--header-height);
+  width: calc(100% - var(--navbar-width-min));
+  top: 0;
+  right: 0;
+  background-color: aliceblue;
+}
