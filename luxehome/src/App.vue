@@ -1,9 +1,11 @@
 <template>
-  <app-nav :closed="closed" @mouseenter="closed = false"></app-nav>
-  <div id="page" @mouseenter="closed = true">
-    <app-header></app-header>
-    <main>jkgkjg</main>
-    <footer>hjgkyugku</footer>
+  <app-nav :open="open" @mouseenter="open = true"></app-nav>
+  <div id="page" @mouseenter="open = false">
+    <app-header @open-nav="open = !open"></app-header>
+    <main>
+      <router-view />
+    </main>
+    <footer></footer>
   </div>
 </template>
 
@@ -18,7 +20,7 @@ export default {
 
   data() {
     return {
-      closed: true,
+      open: false,
     };
   },
 };

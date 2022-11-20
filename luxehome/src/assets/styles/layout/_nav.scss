@@ -3,14 +3,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 0;
   width: var(--navbar-width);
   transition: var(--nav-transition);
 
-  &__header {
-    background-color: blanchedalmond;
-    height: var(--header-height);
+  @media (min-width: $breakpoint-lg) {
+    z-index: 50;
+    transform: none;
   }
-
-  background-color: bisque;
 }

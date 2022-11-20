@@ -1,21 +1,17 @@
 #nav {
-  &.closed {
-    transform: translateX(calc(-100% + var(--navbar-width-min)));
-  }
-
-  @media (max-width: $breakpoint-lg) {
-    &.closed {
-      transform: none;
-    }
-
-    & ~ #page,
-    & ~ #topbar {
+  &.open {
+    & ~ #page {
       transform: translateX(var(--navbar-width));
     }
+  }
 
-    &:not(.visible) {
-      & ~ #page,
-      & ~ #topbar {
+  @media (min-width: $breakpoint-lg) {
+    &:not(.open) {
+      transform: translateX(calc(-100% + var(--navbar-width-min)));
+    }
+
+    &.open {
+      & ~ #page {
         transform: none;
       }
     }

@@ -21,35 +21,50 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 0;
   width: var(--navbar-width);
   transition: var(--nav-transition);
-  background-color: bisque;
 }
-#nav__header {
-  background-color: blanchedalmond;
-  height: var(--header-height);
+@media (min-width: 992px) {
+  #nav {
+    z-index: 50;
+    transform: none;
+  }
 }
 
 #page {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   padding-top: var(--header-height);
-  padding-left: var(--navbar-width-min);
   min-height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
   transition: var(--nav-transition);
+  z-index: 10;
+  background-color: aliceblue;
+}
+@media (min-width: 992px) {
+  #page {
+    padding-left: var(--navbar-width-min);
+  }
 }
 
 #header {
   position: fixed;
   height: var(--header-height);
-  width: calc(100% - var(--navbar-width-min));
+  width: 100%;
   top: 0;
   right: 0;
-  background-color: aliceblue;
+}
+#header > * {
+  flex: 0 0 50px;
+}
+@media (min-width: 992px) {
+  #header {
+    width: calc(100% - var(--navbar-width-min));
+  }
 }
 
 .scroll-y, #page {
@@ -57,17 +72,29 @@ body {
   overflow-y: overlay;
 }
 
-#nav.closed {
-  transform: translateX(calc(-100% + var(--navbar-width-min)));
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-palette__c);
 }
-@media (max-width: 992px) {
-  #nav.closed {
+
+.nav {
+  background-color: var(--color-palette__c);
+}
+.nav__header {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: var(--header-height);
+}
+
+#nav.open ~ #page {
+  transform: translateX(var(--navbar-width));
+}
+@media (min-width: 992px) {
+  #nav:not(.open) {
+    transform: translateX(calc(-100% + var(--navbar-width-min)));
+  }
+  #nav.open ~ #page {
     transform: none;
   }
-  #nav ~ #page, #nav ~ #topbar {
-    transform: translateX(var(--navbar-width));
-  }
-  #nav:not(.visible) ~ #page, #nav:not(.visible) ~ #topbar {
-    transform: none;
-  }
-}
+}/*# sourceMappingURL=main.css.map */

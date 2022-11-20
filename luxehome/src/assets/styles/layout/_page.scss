@@ -1,12 +1,18 @@
-#page{
+#page {
   @extend .scroll-y;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   padding-top: var(--header-height);
-  padding-left: var(--navbar-width-min);
   min-height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
   transition: var(--nav-transition);
+  z-index: 10;
+  background-color: aliceblue;
+
+  @media (min-width: $breakpoint-lg) {
+    padding-left: var(--navbar-width-min);
+  }
 }

@@ -1,0 +1,8 @@
+.nav {
+  background-color: var(--color-palette__c);
+
+  &__header {
+    background-color: rgba(#000, 0.3);
+    height: var(--header-height);
+  }
+}
