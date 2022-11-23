@@ -11,7 +11,7 @@ import api from "@/plugins/api";
 app.use(api, { http: axios });
 
 import theme from "@/plugins/theme";
-app.use(theme);
+app.use(theme, { palette: "dark" });
 
 app.use(router);
 

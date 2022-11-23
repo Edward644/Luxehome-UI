@@ -24,4 +24,10 @@ export default class Service {
     const { data } = await this.#http(this.#domain + path);
     return data;
   }
+
+  async getLogs() {
+    const path = "/api/logs";
+    const { data } = await this.#http(this.#domain + path);
+    return data;
+  }
 }

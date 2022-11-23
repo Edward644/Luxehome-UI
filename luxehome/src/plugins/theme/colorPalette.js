@@ -10,6 +10,7 @@ export function analogous(color) {
     c: hex,
     d: converters.HSLToHex(toHue(hue - 16), toSat(sat + 5), lightness - 9),
     e: converters.HSLToHex(toHue(hue - 32), toSat(sat + 5), lightness),
+    f: "#ffffff",
   };
 }
 
@@ -23,6 +24,7 @@ export function complementary(color) {
     c: hex,
     d: converters.HSLToHex(toHue(hue + 180), saturation, lightness - 30),
     e: converters.HSLToHex(toHue(hue + 180), saturation, lightness),
+    f: "#ffffff",
   };
 }
 
@@ -36,19 +38,22 @@ export function mono(color) {
     c: hex,
     d: converters.HSLToHex(hue, saturation / 2, lightness * 0.67),
     e: converters.HSLToHex(hue, saturation, lightness - 10),
+    f: "#ffffff",
   };
 }
 
 export function dark(color) {
   const hex = parseToHex(color);
-  const [hue, saturation, lightness] = converters.hexToHSL(hex);
+  // const [hue, saturation, lightness] = converters.hexToHSL(hex);
 
   return {
-    a: converters.HSLToHex(hue, saturation, lightness / 2),
-    b: converters.HSLToHex(hue, saturation, lightness * 0.04),
+    a: "#000000",
+    b: "#000000",
     c: hex,
-    d: converters.HSLToHex(hue, saturation / 2, lightness * 0.67),
-    e: converters.HSLToHex(hue, saturation, lightness - 10),
+    d: "#000000",
+    e: "#000000",
+    bg: "#1c1b22",
+    text: "#e3e3e3",
   };
 }
 

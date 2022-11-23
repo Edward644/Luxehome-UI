@@ -53,4 +53,8 @@ function setCssValues(palette) {
   rt.style.setProperty("--color-palette__c", `${palette.c}`);
   rt.style.setProperty("--color-palette__d", `${palette.d}`);
   rt.style.setProperty("--color-palette__e", `${palette.e}`);
+  rt.style.setProperty("--color-palette__f", `${palette.f}`);
+
+  rt.style.setProperty("--bg-color", `${palette.bg}`);
+  rt.style.setProperty("--text-color", `${palette.text}`);
 }

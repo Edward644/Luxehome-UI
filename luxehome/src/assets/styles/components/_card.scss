@@ -1,0 +1,10 @@
+.card {
+  border: 1px solid var(--line-color);
+
+  &__header,
+  &__body,
+  &__footer {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
